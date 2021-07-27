@@ -10,7 +10,7 @@ const handleDatabaseError = (res, error) => {
 
 loginRouter.post('/', async (req, res) => {
 
-  if (!req.headers.schacpersonaluniquecode)
+  if (!req.headers.hypersonstudentid)
     return res
       .status(401)
       .json({ error: 'Student number missing from headers.' })
