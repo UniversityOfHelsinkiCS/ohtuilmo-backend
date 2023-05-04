@@ -4,7 +4,7 @@ const { checkLogin, checkAdmin } = require('../middleware')
 
 const handleDatabaseError = (res, error) => {
   console.log(error)
-  res.status(500).json({ error: 'database error' })
+  res.status(500).json({ error: 'Something is wrong... try reloading the page' })
 }
 
 const isNil = (value) => value === undefined || value === null
@@ -108,7 +108,7 @@ instructorReviewRouter.post('/', checkLogin, async (req, res) => {
     }
   } catch (error) {
     console.log(error)
-    return res.status(500).json({ error: 'database error' })
+    return res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 
   const error = validateAnswerSheet(instructorReview)

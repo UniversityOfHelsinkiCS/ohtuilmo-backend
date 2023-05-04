@@ -4,7 +4,7 @@ const { checkAdmin, checkLogin } = require('../middleware')
 
 const handleDatabaseError = (res, error) => {
   console.log(error)
-  res.status(500).json({ error: 'database error ' })
+  res.status(500).json({ error: 'Something is wrong... try reloading the page ' })
 }
 
 const createCustomerReviewQuestionSet = async (req, res) => {

@@ -12,7 +12,7 @@ const includeArray = [
 
 const handleDatabaseError = (res, error) => {
   console.log(error)
-  res.status(500).json({ error: 'database error' })
+  res.status(500).json({ error: 'Something is wrong... try reloading the page' })
 }
 
 const returnPopulatedConfiguration = (req, res, unPopulatedConfiguration) => {

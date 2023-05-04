@@ -27,7 +27,7 @@ usersRouter.put('/:studentNumber', checkLogin, async (req, res) => {
     res.status(200).json({ user: refreshedUser })
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'database error' })
+    res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 })
 
@@ -37,7 +37,7 @@ usersRouter.get('/', checkAdmin, async (req, res) => {
     res.status(200).json(users)
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'database error' })
+    res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 })
 
@@ -53,7 +53,7 @@ usersRouter.get('/isInstructor', checkLogin, async (req, res) => {
     }
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'database error' })
+    res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 })
 

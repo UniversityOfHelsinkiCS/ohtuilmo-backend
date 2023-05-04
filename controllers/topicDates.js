@@ -12,7 +12,7 @@ topicDatesRouter.post('/', checkAdmin, (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).json({ error: 'database error' })
+      res.status(500).json({ error: 'Something is wrong... try reloading the page' })
     })
 })
 
@@ -27,7 +27,7 @@ topicDatesRouter.get('/', (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      res.status(500).json({ error: 'database error' })
+      res.status(500).json({ error: 'Something is wrong... try reloading the page' })
     })
 })
 

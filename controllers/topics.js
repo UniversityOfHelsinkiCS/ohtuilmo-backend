@@ -32,7 +32,7 @@ const registrationCheck = async (req, res, next) => {
     next()
   } catch (err) {
     console.error('Error in registrationCheck', err)
-    return res.status(500).json({ error: 'database error' })
+    return res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 }
 
@@ -57,7 +57,7 @@ topicsRouter.post('/:id/copy', async (req, res) => {
     })
     .catch((error) => {
       console.log(error)
-      res.status(500).json({ error: 'database error' })
+      res.status(500).json({ error: 'Something is wrong... try reloading the page' })
     })
 })
 
@@ -86,7 +86,7 @@ topicsRouter.post('/', registrationCheck, (req, res) => {
     })
     .catch((error) => {
       console.log(error)
-      res.status(500).json({ error: 'database error' })
+      res.status(500).json({ error: 'Something is wrong... try reloading the page' })
     })
 })
 
@@ -126,12 +126,12 @@ topicsRouter.put(
             })
             .catch((error) => {
               console.log(error)
-              res.status(500).json({ error: 'database error' })
+              res.status(500).json({ error: 'Something is wrong... try reloading the page' })
             })
         })
         .catch((error) => {
           console.log(error)
-          res.status(500).json({ error: 'database error' })
+          res.status(500).json({ error: 'Something is wrong... try reloading the page' })
         })
     } else {
       db.Topic.findById(req.params.id)
@@ -152,12 +152,12 @@ topicsRouter.put(
             })
             .catch((error) => {
               console.log(error)
-              res.status(500).json({ error: 'database error' })
+              res.status(500).json({ error: 'Something is wrong... try reloading the page' })
             })
         })
         .catch((error) => {
           console.log(error)
-          res.status(500).json({ error: 'database error' })
+          res.status(500).json({ error: 'Something is wrong... try reloading the page' })
         })
     }
   }
@@ -211,7 +211,7 @@ topicsRouter.get('/', checkAdmin, async (req, res) => {
     return res.status(200).json({ topics: topics.map(serializer) })
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'database error' })
+    res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 })
 
@@ -242,7 +242,7 @@ topicsRouter.get('/active', async (req, res) => {
     })
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'database error' })
+    res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 })
 
@@ -262,7 +262,7 @@ topicsRouter.get('/:id', (req, res) => {
       })
       .catch((error) => {
         console.log(error)
-        res.status(500).json({ error: 'database error' })
+        res.status(500).json({ error: 'Something is wrong... try reloading the page' })
       })
   } else {
     db.Topic.findOne({
@@ -278,7 +278,7 @@ topicsRouter.get('/:id', (req, res) => {
       })
       .catch((error) => {
         console.log(error)
-        res.status(500).json({ error: 'database error' })
+        res.status(500).json({ error: 'Something is wrong... try reloading the page' })
       })
   }
 })

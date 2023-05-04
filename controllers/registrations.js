@@ -5,7 +5,7 @@ const { checkAdmin, checkLogin } = require('../middleware')
 
 const handleDatabaseError = (res, error) => {
   console.log(error)
-  res.status(500).json({ error: 'database error' })
+  res.status(500).json({ error: 'Something is wrong... try reloading the page' })
 }
 
 const registrationCheck = async (req, res, next) => {
@@ -25,7 +25,7 @@ const registrationCheck = async (req, res, next) => {
     next()
   } catch (err) {
     console.error('Error in registrationCheck', err)
-    return res.status(500).json({ error: 'database error' })
+    return res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 }
 

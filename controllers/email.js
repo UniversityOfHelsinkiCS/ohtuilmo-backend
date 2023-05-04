@@ -243,7 +243,7 @@ emailRouter.get('/templates', checkAdmin, async (req, res) => {
     const payload = templates.length > 0 ? templates[0] : defaultEmailTemplates
     return res.json(serializeTemplatesByLanguage(payload))
   } catch (err) {
-    res.status(500).json({ error: 'database error' })
+    res.status(500).json({ error: 'Something is wrong... try reloading the page' })
   }
 })
 
@@ -312,7 +312,7 @@ emailRouter.post(
       })
       res.status(200).json(serializeTemplatesByLanguage(createdTemplates))
     } catch (e) {
-      res.status(500).json({ error: 'database error' })
+      res.status(500).json({ error: 'Something is wrong... try reloading the page' })
     }
   }
 )
