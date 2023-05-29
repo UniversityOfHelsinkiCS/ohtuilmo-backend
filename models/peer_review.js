@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.DATE,
       allowNull: false
     }
+  },
+  {
+    underscored: true
   })
 
   return peerReviews

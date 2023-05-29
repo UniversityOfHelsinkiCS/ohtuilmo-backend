@@ -14,6 +14,9 @@ module.exports = (sequelize, Sequelize) => {
     configuration_id: {
       type: Sequelize.INTEGER
     },
+  },
+  {
+    underscored: true
   })
 
   Registration.associate = (models) => {

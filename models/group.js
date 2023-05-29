@@ -7,6 +7,9 @@ module.exports = (sequelize, Sequelize) => {
       primaryKey: true
     },
     name: Sequelize.STRING
+  },
+  {
+    underscored: true
   })
 
   return Group

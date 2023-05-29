@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
     secret_id: {
       type: Sequelize.STRING
     }
+  },
+  {
+    underscored: true
   })
 
   return Topic

@@ -11,6 +11,9 @@ module.exports = (sequelize, Sequelize) => {
     questions: {
       type: Sequelize.JSONB
     }
+  },
+  {
+    underscored: true
   })
 
   return Registration_question_set

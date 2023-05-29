@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
     answers: {
       type: Sequelize.JSONB
     }
+  },
+  {
+    underscored: true
   })
 
   Review_answer.associate = (models) => {

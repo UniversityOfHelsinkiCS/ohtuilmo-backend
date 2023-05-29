@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.DATE,
       allowNull: false
     }
+  },
+  {
+    underscored: true
   })
   return customerReviews
 }

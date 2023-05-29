@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
     dates: {
       type: Sequelize.JSONB
     }
+  },
+  {
+    underscored: true
   })
 
   return Topic_date

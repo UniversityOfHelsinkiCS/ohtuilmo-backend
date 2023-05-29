@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.BOOLEAN,
       defaultValue: false
     }
+  },
+  {
+    underscored: true
   })
 
   return User

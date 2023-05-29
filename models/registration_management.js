@@ -30,6 +30,9 @@ module.exports = (sequelize, Sequelize) => {
     topic_registration_message: {
       type: Sequelize.STRING
     }
+  },
+  {
+    underscored: true
   })
 
   return Registration_management
