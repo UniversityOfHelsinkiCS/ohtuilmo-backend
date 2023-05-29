@@ -20,7 +20,7 @@ db.connect = () => {
     })
     .catch((err) => {
       console.error('Unable to connect to the database:', err)
-      process.exit(1)
+      // process.exit(1)
     })
 
   const UserModel = require('./user')
