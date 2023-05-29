@@ -6,7 +6,12 @@ const db = {}
 db.connect = () => {
   const sequelizeConfig = config[process.env.NODE_ENV]
 
-  const sequelize = new Sequelize(sequelizeConfig)
+  let sequelize
+  if (process.env.DATABASE_URL) {
+    sequelize = new Sequelize(process.env.DATABASE_URL, { logging: false })
+  } else {
+    sequelize = new Sequelize(sequelizeConfig)
+  }
 
   sequelize
     .authenticate()
