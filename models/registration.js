@@ -10,7 +10,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     questions: {
       type: Sequelize.JSONB
-    }
+    },
+    configuration_id: {
+      type: Sequelize.INTEGER
+    },
   })
 
   Registration.associate = (models) => {
