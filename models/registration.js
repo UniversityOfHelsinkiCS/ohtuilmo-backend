@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
     questions: {
       type: Sequelize.JSONB
     },
-    configuration_id: {
+    configurationId: {
       type: Sequelize.INTEGER
     },
   })
