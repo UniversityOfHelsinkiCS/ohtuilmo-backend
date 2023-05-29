@@ -25,6 +25,9 @@
       "min": 0,
       "acquire": 10000,
       "idle": 300000000
+    },
+    "dialectOptions": {
+      "ssl": true
     }
   }
 }
