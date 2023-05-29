@@ -4,8 +4,8 @@ const { checkAdmin, checkLogin } = require('../middleware')
 
 // determines which associated models are returned with configuration
 const includeArray = [
-  'review_question_set_1',
-  'review_question_set_2',
+  'review_question_set1',
+  'review_question_set2',
   'registration_question_set',
   'customer_review_question_set'
 ]
@@ -182,15 +182,15 @@ configurationsRouter.get(
     try {
       const response = await db.Configuration.findByPk(req.params.id, {
         include: [
-          'review_question_set_1',
-          'review_question_set_2',
+          'review_question_set1',
+          'review_question_set2',
           'registration_question_set'
         ]
       })
       if (req.params.reviewround === '1') {
-        res.status(200).json(response.review_question_set_1)
+        res.status(200).json(response.review_question_set1)
       } else if (req.params.reviewround === '2') {
-        res.status(200).json(response.review_question_set_2)
+        res.status(200).json(response.review_question_set2)
       } else {
         res.status(400).json({ error: 'bad review round' })
       }

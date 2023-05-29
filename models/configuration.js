@@ -22,10 +22,10 @@ module.exports = (sequelize, Sequelize) => {
   Configuration.associate = (models) => {
     Configuration.hasMany(models.Registration) // used only for creating the foreign key in registrations, should be removed and implemented from registration side
     Configuration.belongsTo(models.ReviewQuestionSet, {
-      as: 'review_question_set_1'
+      as: 'review_question_set1'
     })
     Configuration.belongsTo(models.ReviewQuestionSet, {
-      as: 'review_question_set_2'
+      as: 'review_question_set2'
     })
     Configuration.belongsTo(models.RegistrationQuestionSet)
     Configuration.belongsTo(models.CustomerReviewQuestionSet)
