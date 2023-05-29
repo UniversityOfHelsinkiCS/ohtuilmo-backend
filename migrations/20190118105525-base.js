@@ -61,8 +61,8 @@ module.exports = {
         // sequelize timestamps
         ...createTimestampColumns({ camelCase: false }),
         // foreign keys for associations
-        review_question_set_1_id: Sequelize.INTEGER,
-        review_question_set_2_id: Sequelize.INTEGER,
+        review_question_set1_id: Sequelize.INTEGER,
+        review_question_set2_id: Sequelize.INTEGER,
         registration_question_set_id: Sequelize.INTEGER
       }),
       query.createTable('groups', {
@@ -212,13 +212,13 @@ module.exports = {
       ['registration_question_sets', 'id']
     )
     await addForeignKey(
-      'configurations_review_question_set_1_id_fkey',
-      ['configurations', 'review_question_set_1_id'],
+      'configurations_review_question_set1_id_fkey',
+      ['configurations', 'review_question_set1_id'],
       ['review_question_sets', 'id']
     )
     await addForeignKey(
-      'configurations_review_question_set_2_id_fkey',
-      ['configurations', 'review_question_set_2_id'],
+      'configurations_review_question_set2_id_fkey',
+      ['configurations', 'review_question_set2_id'],
       ['review_question_sets', 'id']
     )
     await addForeignKey(
@@ -260,11 +260,11 @@ module.exports = {
       },
       {
         table: 'configurations',
-        constraint: 'configurations_review_question_set_1_id_fkey'
+        constraint: 'configurations_review_question_set1_id_fkey'
       },
       {
         table: 'configurations',
-        constraint: 'configurations_review_question_set_2_id_fkey'
+        constraint: 'configurations_review_question_set2_id_fkey'
       },
       { table: 'memberships', constraint: 'memberships_id_fkey' },
       {

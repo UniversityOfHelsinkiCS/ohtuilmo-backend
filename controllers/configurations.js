@@ -28,28 +28,28 @@ const returnPopulatedConfiguration = (req, res, unPopulatedConfiguration) => {
 
 const setForeignKeys = async (configuration, req, res) => {
   try {
-    if (req.body.review_question_set_1_id) {
+    if (req.body.review_question_set1_id) {
       const foundSet = await db.ReviewQuestionSet.findOne({
-        where: { id: req.body.review_question_set_1_id }
+        where: { id: req.body.review_question_set1_id }
       })
       if (!foundSet)
         return res
           .status(400)
           .json({ error: 'no peer review question set with that id' })
       await configuration.setReview_question_set_1(
-        req.body.review_question_set_1_id
+        req.body.review_question_set1_id
       )
     }
-    if (req.body.review_question_set_2_id) {
+    if (req.body.review_question_set2_id) {
       const foundSet = await db.ReviewQuestionSet.findOne({
-        where: { id: req.body.review_question_set_2_id }
+        where: { id: req.body.review_question_set2_id }
       })
       if (!foundSet)
         return res
           .status(400)
           .json({ error: 'no peer review question set with that id' })
       await configuration.setReview_question_set_2(
-        req.body.review_question_set_2_id
+        req.body.review_question_set2_id
       )
     }
     if (req.body.registration_question_set_id) {
