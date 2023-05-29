@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/ohtuprojekti-ilmo/ohtuilmo-backend#readme",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^5.0.1",
@@ -39,7 +39,7 @@
     "pg": "^7.6.1",
     "pg-hstore": "^2.3.2",
     "randomstring": "^1.1.5",
-    "sequelize": "^5.21.2",
+    "sequelize": "^4.41.2",
     "sequelize-cli": "^5.4.0",
     "shuffle-array": "^1.0.1",
     "unfuck-utf8-headers-middleware": "^1.0.0"
