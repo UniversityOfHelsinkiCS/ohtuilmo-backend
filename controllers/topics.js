@@ -41,7 +41,7 @@ topicsRouter.post('/:id/copy', async (req, res) => {
     order: [['createdAt', 'DESC']]
   })
 
-  const from = await db.Topic.findById(req.params.id)
+  const from = await db.Topic.findByPk(req.params.id)
 
   const secret_id = getRandomId()
 
@@ -134,7 +134,7 @@ topicsRouter.put(
           res.status(500).json({ error: 'Something is wrong... try reloading the page' })
         })
     } else {
-      db.Topic.findById(req.params.id)
+      db.Topic.findByPk(req.params.id)
         .then((topic) => {
           if (!topic)
             return res.status(400).json({ error: 'no topic with that id' })
