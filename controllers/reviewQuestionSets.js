@@ -80,11 +80,12 @@ reviewQuestionSetsRouter.get('/', checkAdmin, (req, res) => {
     .catch((error) => handleDatabaseError(res, error))
 })
 
-reviewQuestionSetsRouter.get('/:id', checkLogin, async (req, res) => {
+reviewQuestionSetsRouter.get('/:id', async (req, res) => {
   try {
     const response = await db.ReviewQuestionSet.findByPk(req.params.id)
     res.status(200).json(response)
   } catch (error) {
+    console.log('WTF happened', error)
     handleDatabaseError(res, error)
   }
 })
