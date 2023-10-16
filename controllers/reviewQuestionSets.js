@@ -87,7 +87,6 @@ reviewQuestionSetsRouter.get('/:id', async (req, res) => {
     const response = await db.ReviewQuestionSet.findByPk(req.params.id)
     res.status(200).json(response)
   } catch (error) {
-    console.log('WTF happened', error)
     handleDatabaseError(res, error)
   }
 })
