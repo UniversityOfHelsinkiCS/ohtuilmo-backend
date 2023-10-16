@@ -3,7 +3,9 @@ const db = require('../models/index')
 const { checkAdmin, checkLogin } = require('../middleware')
 
 const handleDatabaseError = (res, error) => {
+  console.log('--')
   console.log(error)
+  console.log('--')
   res.status(500).json({ error: 'Something is wrong... try reloading the page ' })
 }
 
